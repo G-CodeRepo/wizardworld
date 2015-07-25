@@ -1,0 +1,16 @@
+The Wizard's World User's Guide
+
+Hou to run the game:
+-Open the command prompt
+-Change to whatever directory the lisp file is in
+-Start CLISP
+-Load the lisp file by entering (load "filename")
+-Type command (game-repl)
+-Play! 
+
+Tips:
+-Use the (look) command first to see where you are
+-Type (help) (h) or (?) for a list of commands and how to use them
+-Obtain the magic low-carb donut before flying to hogwarts on the bike
+-Nearly Headless Nick is in the Empty Corridor (south of the Floor 2 Hallway)
+-If you eat the candy also eat the antidote from the Hospital Wing before dueling Malfoy

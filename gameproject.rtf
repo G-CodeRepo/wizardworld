@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;}
+\vieww10620\viewh14520\viewkind1
+\deftab720
+\pard\pardeftab720\ri0\sl276\slmult1
+
+\f0\fs22 \cf0 Goal: Duel Draco Malfoy to get a toad he stole from the wizard\
+\
+After waking up the wizard and winning the game, the wizard will tell you to take the flying bike to Hogwarts to retrieve the toad from Malfoy. Tip: find Peeves the Poltergeist for duel advice\
+\
+Action: fly bike\
+\
+Entrance hall:  You are in the Entrance Hall. It is a large, cavernous room, lit by torches, with ceiling so high it's barely visible. There is a wide marble staircase across the hall. There are large double doors going west and slightly smaller double doors going south. \
+\
+(west of entrance hall)Great Hall: You are in the Great Hall. There are four long tables in front of you covered in golden plates and goblets, pies, ice cream, and other desserts. Some students are sitting are the tables are chatting and eating. There is a bowl of candy to your left.  \
+\
+\pard\pardeftab720\fi720\ri0\sl276\slmult1
+\cf0 Object: candy\
+\pard\pardeftab720\ri0\sl276\slmult1
+\cf0 \
+\pard\pardeftab720\fi720\ri0\sl276\slmult1
+\cf0 Action: eat candy	\
+	- if candy is in your inventory\
+	-set sick parameter to true\
+\pard\pardeftab720\li2160\ri0\sl276\slmult1
+\cf0 \'93Oh no, this is a Puking Pastille from Weasleys Wizard Wheezes. You need to find the antidote before facing malfoy.\'94 \
+\pard\pardeftab720\li720\ri0\sl276\slmult1
+\cf0 \
+\pard\pardeftab720\ri0\sl276\slmult1
+\cf0 (south of entrance hall)Courtyard: You are in the Courtyard. It is a large green grassy square with big trees. There is a book cover in the grass to your right. \
+	\
+	Object: Book-cover\
+\
+(upstairs from entrance hall, downstairs from Floor 2 hallway) Floor 1 hallway: You are in the Floor 1 hallway. It is dimly lit with torches and has paintings lining the walls. There are double doors going east and a single door going west. There is a staircase at the end of the hall. \
+\
+(east of floor 1 hallway)Hospital Wing: You are in the hospital wing. There are six patient beds lining the walls in the large room. Madame Pomfrey is folding bandages near the second bed. There is a sign on a table in front of you that says \'93Antidotes for Weasley Wizard Wheezes products\'94. There is a container filled with multicolored antidotes. . \
+\
+	Object: Antidote\
+\
+	Action: take antidote\
+		- set sick parameter to false\
+			\'93The Puking Pastille sickness is cured.\'94\
+\
+(west of floor 1 hallway)History of Magic Classroom: You are in the History of Magic classroom. There is a blackboard in the front of the room and several long tables with chairs. You can see Hagrids cabin from the thick glass windows. There is a wand laying under one of the tables.\
+\
+	Object: wand\
+(upstairs from Floor 1 hallway, downstairs from floor 3 hallway) Floor 2 hallway: You are in the Floor 1 hallway. It is dimly lit with torches and has paintings lining the walls. There is an empty corridor going south and a single door going west. There is a staircase at the end of the hall. \
+\
+(south of Floor 2 hallway) Empty Corridor: You are in the empty corridor. It\'92s darker than the previous hallway and here is a stone gargoyle statue halfway down the corridor. There\'92s a ghost floating a few feet from you. It\'92s Nearly Headless Nick! He says, \'93If you\'92re going to duel Malfoy you\'92ll need a wand and the Standard Book of Spells.\'94\
+\
+(east of floor 2 hallway) Trophy Room: You are in the trophy room. Glass displays filled with awards, trophies, and medals fill the room. There are some pages on top of one of the trophy cases. Mrs. Norris is walking towards you. Better get out of here quick. \
+\
+	Object: pages\
+\
+(upstairs from Floor 2 hallway) Floor 3 hallway: You are in the Floor 3 hallway. It is dimly lit with torches and has paintings lining the walls. There are double doors going north and a single door going west. There is a staircase behind you. \
+\
+(north of Floor 3 hallway) Library: You are in the Library. There are tens of thousands of books and students quietly studying. There is a house elf fixing bookbindings in the corner. bike\
+\
+	action: bind book-cover pages\
+		- set binded parameter to true\
+			\'93You now have the Standard Book of Spells\'94\
+	\
+(downstairs from entrance hall) Dungeons: You are in the dungeons. It\'92s darker and colder down here than the rest of the castle. You see Draco Malfoy but he doesn\'92t see you.\
+\
+	Action: duel wand Malfoy\
+		- check for wand\
+			\'93Dueling without a wand? You lose.\'94\
+		- check that binded is true\
+			\'93You don\'92t know any spells! You lose.\'94\
+		- check that sick parameter is set to false\
+			\'93You\'92re still sick from the Puking Pastille. You can\'92t duel like this. You lose.\'94\
+		- set duel parameter to true\
+\
+	Action: throw bucket malfoy\
+		- check that duel parameter is true\
+		\'93You can\'92t win like that. Use the wand!\'94\
+	\
+\
+	Action: cast wand expelliarmus\
+		-check that duel parameter is true\
+		\'93Malfoy is disarmed! He\'92s running away and he dropped the toad! You win! The end.\'94\
+\
+\
+	\
+\
+New Actions: Fly bike, eat candy, take antidote, bind book-cover pages, duel wand malfoy, throw bucket malfoy, cast wand expelliarmus\
+\
+New Objects: candy, antidote, wand, book-cover, pages\
+\
+New Locations: entrance-hall, great-hall, courtyard, hospital-wing, floor-1-hallway, history-of-magic-classroom, floor-2-hallway, empty-corridor, trophy-room, floor-3-hallway, dungeons \
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\ri0\sl276\slmult1\qc
+\cf0  Floor 3 hallway  \uc0\u8596   library\
+\uc0\u8597 \
+Empty Corridor  \uc0\u8596   Floor 2 hallway  \u8596   trophy room\
+\uc0\u8597 \
+History of magic classroom  \uc0\u8596   Floor 1 hallway  \u8596   hospital wing\
+\uc0\u8597 \
+great hall  \uc0\u8596   entrance hall  \u8596   courtyard\
+\uc0\u8597 \
+ dungeons\
+}
